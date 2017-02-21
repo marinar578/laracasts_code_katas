@@ -1,24 +1,18 @@
 <?php
 
-class PrimeFactors {
+class PrimeFactors
+{
+    public function generate($number)
+    {
+        $primes = [];
 
-	/**
-	 * @param $number
-	 * @return array
-	 */
-	public function generate($number)
-	{
-		$primes = [];
+        for ($i = 2; $number > 1; $i++)
+        {
+            for (; $number % $i == 0; $number /= $i) {
+                $primes[] = $i;
+            }
+        }
 
-		for ($candidate = 2; $number > 1; $candidate++)
-		{
-			for (; $number % $candidate == 0; $number /= $candidate)
-			{
-				$primes[] = $candidate;
-			}
-		}
-
-		return $primes;
-	}
-
+        return $primes;
+    }
 }

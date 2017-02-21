@@ -1,3 +1,4 @@
+// process.env.DISABLE_NOTIFIER = true;
 var gulp = require('gulp');
 var phpspec = require('gulp-phpspec');
 var run = require('gulp-run');
