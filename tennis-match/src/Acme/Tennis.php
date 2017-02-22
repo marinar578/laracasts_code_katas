@@ -50,5 +50,12 @@ class Tennis
                 (abs($this->player1->points - $this->player2->points >= 2));
     }
 
+    public function winner()
+    {
+        return $this->player1->points > $this->player2->points
+                ? $this->player1
+                : $this->player2;
+    }
+
 
 }
