@@ -27,8 +27,7 @@ class Tennis
         // Win for NAME
         if ($this->hasWinner())
         {
-            return 'Win for John Doe';
-            // return 'Win for ' / $this->winner()->name;
+            return 'Win for ' . $this->winner()->name;
         }
 
         $score = $this->lookup[$this->player1->points] . '-';
@@ -46,7 +45,7 @@ class Tennis
         return $this->hasEnoughPointstoBeWon() && $this->isLeadingByTwo();
     }
 
-    public function winner()
+    private function winner()
     {
         return $this->player1->points > $this->player2->points
                 ? $this->player1
@@ -60,7 +59,7 @@ class Tennis
 
     private function isLeadingByTwo()
     {
-        return abs($this->player1->points - $this->player2->points >= 2);
+        return abs($this->player1->points - $this->player2->points) >= 2;
     }
 
 
