@@ -7,8 +7,8 @@ use Prophecy\Argument;
 
 class StringCalculatorSpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    function it_translates_an_empty_string_into_zero()
     {
-        $this->shouldHaveType('StringCalculator');
+        $this->add('')->shouldEqual(0);
     }
 }
