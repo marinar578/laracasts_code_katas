@@ -41,4 +41,11 @@ class TennisSpec extends ObjectBehavior {
         $this->john->earnPoints(3);
         $this->score()->shouldReturn('Forty-Love');
     }
+
+    function it_scores_a_4_0_game()
+    {
+        $this->john->earnPoints(4);
+        $this->score()->shouldReturn('Win for John Doe');
+    }
+
 }
