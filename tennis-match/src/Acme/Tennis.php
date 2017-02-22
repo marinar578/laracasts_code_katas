@@ -34,6 +34,11 @@ class Tennis
             return 'Advantage ' . $this->winner()->name;
         }
 
+        if ($this->inDeuce())
+        {
+            return 'Deuce';
+        }
+
         $score = $this->lookup[$this->player1->points] . '-';
 
         return $score .= $this->tied() ? 'All' : $this->lookup[$this->player2->points];
@@ -52,6 +57,11 @@ class Tennis
     private function hasTheAdvantage()
     {
         return $this->hasEnoughPointstoBeWon() && abs($this->player1->points - $this->player2->points) == 1;
+    }
+
+    private function inDeuce()
+    {
+        return $this->player1->points + $this->player2->points >=6 && $this->tied();
     }
 
     private function winner()
