@@ -7,8 +7,8 @@ use Prophecy\Argument;
 
 class TennisSpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    function it_scores_a_scoreless_game()
     {
-        $this->shouldHaveType('Acme\Tennis');
+        $this->score()->shouldReturn('Love-All');
     }
 }
