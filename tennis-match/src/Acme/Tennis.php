@@ -4,11 +4,11 @@ namespace Acme;
 
 class Tennis
 {
-    protected $player1;
+    private $player1;
 
-    protected $player2;
+    private $player2;
 
-    protected $lookup = [
+    private $lookup = [
         0 => 'Love',
         1 => 'Fifteen',
         2 => 'Thirty',
