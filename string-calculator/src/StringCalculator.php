@@ -28,6 +28,6 @@ class StringCalculator
 
     private function parseNumbers($numbers)
     {
-        return preg_split('/\s*(,|\\\n)\s*/', $numbers);
+        return array_map('intval', preg_split('/\s*(,|\\\n)\s*/', $numbers));
     }
 }
