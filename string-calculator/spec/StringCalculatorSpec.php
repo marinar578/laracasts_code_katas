@@ -17,8 +17,8 @@ class StringCalculatorSpec extends ObjectBehavior
         $this->add('5')->shouldEqual(5);
     }
 
-    // function it_finds_the_sum_of_two_numbers()
-    // {
-    //     $this->add('1,2')->shouldEqual(3);
-    // }
+    function it_finds_the_sum_of_two_numbers()
+    {
+        $this->add('1,2')->shouldEqual(3);
+    }
 }

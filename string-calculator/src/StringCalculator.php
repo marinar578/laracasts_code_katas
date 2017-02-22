@@ -5,6 +5,8 @@ class StringCalculator
 
     public function add($numbers)
     {
-        return (int) $numbers;
+        $numbers = explode(',', $numbers);
+
+        return array_sum($numbers);
     }
 }
