@@ -24,10 +24,14 @@ class Tennis
 
     public function score()
     {
-        // Win for NAME
         if ($this->hasWinner())
         {
             return 'Win for ' . $this->winner()->name;
+        }
+
+        if ($this->hasTheAdvantage())
+        {
+            return 'Advantage ' . $this->winner()->name;
         }
 
         $score = $this->lookup[$this->player1->points] . '-';
@@ -43,6 +47,11 @@ class Tennis
     private function hasWinner()
     {
         return $this->hasEnoughPointstoBeWon() && $this->isLeadingByTwo();
+    }
+
+    private function hasTheAdvantage()
+    {
+        return $this->hasEnoughPointstoBeWon() && abs($this->player1->points - $this->player2->points) == 1;
     }
 
     private function winner()
@@ -61,6 +70,4 @@ class Tennis
     {
         return abs($this->player1->points - $this->player2->points) >= 2;
     }
-
-
 }
