@@ -9,17 +9,17 @@ class StringCalculator
     public function add($numbers)
     {
         $numbers = $this->parseNumbers($numbers);
-        $solution = 0;
 
-        foreach ($numbers as $number)
+        return array_sum(array_map(function($number)
         {
             $this->guardAgainstInvalidNumber($number);
-            if ($number >= self::MAX_NUMBER_ALLOWED) continue;
+            if ($number >= self::MAX_NUMBER_ALLOWED)
+            {
+                return 0;
+            }
 
-            $solution += $number;
-        }
-
-        return $solution;
+            return $number;
+        }, $numbers));
     }
 
     private function guardAgainstInvalidNumber($number)
