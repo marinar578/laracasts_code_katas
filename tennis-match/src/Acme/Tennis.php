@@ -39,9 +39,8 @@ class Tennis
             return 'Deuce';
         }
 
-        $score = $this->lookup[$this->player1->points] . '-';
+        return $this->generalScore();
 
-        return $score .= $this->tied() ? 'All' : $this->lookup[$this->player2->points];
     }
 
     private function tied()
@@ -80,4 +79,12 @@ class Tennis
     {
         return abs($this->player1->points - $this->player2->points) >= 2;
     }
+
+    private function generalScore()
+    {
+        $score = $this->lookup[$this->player1->points] . '-';
+
+        return $score .= $this->tied() ? 'All' : $this->lookup[$this->player2->points];
+    }
+
 }
