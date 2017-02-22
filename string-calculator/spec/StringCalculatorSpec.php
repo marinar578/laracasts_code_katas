@@ -11,4 +11,9 @@ class StringCalculatorSpec extends ObjectBehavior
     {
         $this->add('')->shouldEqual(0);
     }
+
+    function it_finds_the_sum_of_one_number()
+    {
+        $this->add('5')->shouldEqual(5);
+    }
 }
