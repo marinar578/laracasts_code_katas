@@ -5,11 +5,16 @@ namespace Acme;
 class Player {
     public $name;
 
-    public $score;
+    public $points;
 
-    public function __construct($name, $score)
+    public function __construct($name, $points)
     {
-        $this->score = $score;
+        $this->points = $points;
         $this->name = $name;
+    }
+
+    public function earnPoints($points)
+    {
+        $this->points = $points;
     }
 }
