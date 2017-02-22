@@ -2,7 +2,7 @@
 
 namespace Acme;
 
-class Tennis {
+class TennisSolved {
 
     /**
      * Player one for the game.

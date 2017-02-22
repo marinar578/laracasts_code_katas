@@ -2,7 +2,7 @@
 
 namespace Acme;
 
-class Player {
+class PlayerSolved {
 
     /**
      * The name of the player.
@@ -32,7 +32,7 @@ class Player {
 
     /**
      * Set the points for the player.
-     * 
+     *
      * @param $points
      */
     public function earnPoints($points)

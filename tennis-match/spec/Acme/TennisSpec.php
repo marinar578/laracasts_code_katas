@@ -6,8 +6,11 @@ use Acme\Player;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class TennisSpec extends ObjectBehavior
-{
+class TennisSpec extends ObjectBehavior {
+    protected $john;
+
+    protected $jane;
+
     function let()
     {
         $this->john = new Player('John Doe', 0);
