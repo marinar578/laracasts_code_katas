@@ -50,12 +50,12 @@ class Tennis
 
     private function hasWinner()
     {
-        return $this->hasEnoughPointstoBeWon() && $this->isLeadingByTwo();
+        return $this->hasEnoughPointstoBeWon() && $this->isLeadingByAtLeastTwo();
     }
 
     private function hasTheAdvantage()
     {
-        return $this->hasEnoughPointstoBeWon() && abs($this->player1->points - $this->player2->points) == 1;
+        return $this->hasEnoughPointstoBeWon() && $this->isLeadingByOne();
     }
 
     private function inDeuce()
@@ -75,9 +75,14 @@ class Tennis
         return max([$this->player1->points, $this->player2->points]) >= 4;
     }
 
-    private function isLeadingByTwo()
+    private function isLeadingByAtLeastTwo()
     {
         return abs($this->player1->points - $this->player2->points) >= 2;
+    }
+
+    private function isLeadingByOne()
+    {
+        return abs($this->player1->points - $this->player2->points) == 1;
     }
 
     private function generalScore()
