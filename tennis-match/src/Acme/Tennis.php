@@ -17,6 +17,10 @@ class Tennis
 
     public function score()
     {
+        if ($this->player1->points == 1 &&$this->player2->points == 0)
+        {
+            return 'Fifteen-Love';
+        }
         return 'Love-All';
     }
 
