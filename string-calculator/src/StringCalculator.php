@@ -12,7 +12,7 @@ class StringCalculator
         foreach ($numbers as $number)
         {
             if ($number < 0) throw new InvalidArgumentException;
-            $solution += $number;
+            $solution += ($number < 1000) ? $number : 0;
         }
 
         return $solution;
