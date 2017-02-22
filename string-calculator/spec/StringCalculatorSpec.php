@@ -37,8 +37,8 @@ class StringCalculatorSpec extends ObjectBehavior
         $this->add('2,2,1000')->shouldEqual(4);
     }
 
-    // function it_allows_for_new_line_delimeters()
-    // {
-    //     $this->add('2,2\n2')->shouldEqual(6);
-    // }
+    function it_allows_for_new_line_delimeters()
+    {
+        $this->add('2,2\n2')->shouldEqual(6);
+    }
 }

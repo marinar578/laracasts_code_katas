@@ -5,8 +5,7 @@ class StringCalculator
 
     public function add($numbers)
     {
-        $numbers = explode(',', $numbers);
-
+        $numbers = preg_split('/\s*,\s*/', $numbers);
         $solution = 0;
 
         foreach ($numbers as $number)
