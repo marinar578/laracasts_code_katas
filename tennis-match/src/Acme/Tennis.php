@@ -43,11 +43,7 @@ class Tennis
 
     private function hasWinner()
     {
-        // leading by 2
-        // 4 or more points
-
-        return (max([$this->player1->points, $this->player2->points]) >= 4) &&
-                (abs($this->player1->points - $this->player2->points >= 2));
+        return $this->hasEnoughPointstoBeWon() && $this->isLeadingByTwo();
     }
 
     public function winner()
@@ -55,6 +51,16 @@ class Tennis
         return $this->player1->points > $this->player2->points
                 ? $this->player1
                 : $this->player2;
+    }
+
+    private function hasEnoughPointstoBeWon()
+    {
+        return max([$this->player1->points, $this->player2->points]) >= 4;
+    }
+
+    private function isLeadingByTwo()
+    {
+        return abs($this->player1->points - $this->player2->points >= 2);
     }
 
 
